@@ -20,12 +20,30 @@ export const useActiveSection = (ids: string[]) => {
           }
         }
       },
-      { threshold: 0.4, rootMargin: "-40% 0px -40% 0px" }
+      { threshold: 0.15, rootMargin: "-20% 0px -60% 0px" }
     );
 
     elements.forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
+    // Fallback: check on scroll
+    const onScroll = () => {
+      const scrollY = window.scrollY + window.innerHeight * 0.3;
+      for (const el of elements) {
+        const rect = el.getBoundingClientRect();
+        const top = rect.top + window.scrollY;
+        const bottom = top + rect.height;
+        if (scrollY >= top && scrollY <= bottom) {
+          setActive(el.id);
+          break;
+        }
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
+    };
   }, [ids]);
 
   return active;
