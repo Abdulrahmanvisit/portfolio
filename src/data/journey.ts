@@ -19,7 +19,7 @@ export const journey: JourneyItem[] = [
     id: "siwes",
     title: "SIWES Intern — Frontend Development",
     organization: "Mentors Innovation Hub (MIHub), Yola, Adamawa State",
-    date: "Sep – Dec 2025",
+    date: "22 Dec 2025 – 22 Feb 2026",
     bullets: [
       "Built responsive interfaces with HTML, CSS and JavaScript across several practical projects.",
       "Developed interactive UI components in React.js, improving UX and functionality.",
