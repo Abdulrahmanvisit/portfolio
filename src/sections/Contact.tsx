@@ -19,15 +19,61 @@ export default function Contact() {
           action="mailto:abdurrahmanbello99@gmail.com?subject=Portfolio%20contact"
           method="POST"
           encType="text/plain"
+          target="_blank"
+          rel="noopener"
           className="mx-auto mt-10 grid max-w-2xl gap-4"
         >
-          <input type="text" name="name" required placeholder="Your name" className="input animate-fade-in-up" />
-          <input type="email" name="email" required placeholder="you@example.com" className="input animate-fade-in-up" style={{ animationDelay: "60ms" }} />
-          <textarea name="message" required rows={4} placeholder="What can I help with?" className="input resize-y animate-fade-in-up" style={{ animationDelay: "120ms" }} />
-          <button type="submit" className="btn btn--primary self-start group animate-fade-in-up" style={{ animationDelay: "180ms" }}>
+          <div className="animate-fade-in-up">
+            <label htmlFor="name" className="sr-only">
+              Your name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Your name"
+              className="input animate-fade-in-up"
+            />
+          </div>
+          <div className="animate-fade-in-up" style={{ animationDelay: "60ms" }}>
+            <label htmlFor="email" className="sr-only">
+              Email address
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="you@example.com"
+              className="input animate-fade-in-up"
+            />
+          </div>
+          <div className="animate-fade-in-up" style={{ animationDelay: "120ms" }}>
+            <label htmlFor="message" className="sr-only">
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows={4}
+              placeholder="What can I help with?"
+              className="input resize-y animate-fade-in-up"
+            />
+          </div>
+          <button
+            type="submit"
+            className="btn btn--primary self-start group animate-fade-in-up"
+            style={{ animationDelay: "180ms" }}
+          >
             Send message <Send size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
           </button>
         </form>
+
+        <p className="sr-only" id="mailto-fallback">
+          If your email client does not open, please email me directly at abdurrahmanbello99@gmail.com
+        </p>
 
         <div className="mt-12 flex justify-center gap-6 animate-fade-in-up" style={{ animationDelay: "240ms" }}>
           {socialLinks.map((link) => (

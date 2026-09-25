@@ -1,26 +1,34 @@
+import { lazy, Suspense } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Hero from "./sections/Hero";
-import About from "./sections/About";
-import TechStack from "./sections/TechStack";
-import Projects from "./sections/Projects";
-import Journey from "./sections/Journey";
-import CurrentlyLearning from "./sections/CurrentlyLearning";
-import Contact from "./sections/Contact";
 import { ThemeProvider } from "./contexts/ThemeProvider";
+
+const About = lazy(() => import("./sections/About"));
+const TechStack = lazy(() => import("./sections/TechStack"));
+const Projects = lazy(() => import("./sections/Projects"));
+const Journey = lazy(() => import("./sections/Journey"));
+const CurrentlyLearning = lazy(() => import("./sections/CurrentlyLearning"));
+const Contact = lazy(() => import("./sections/Contact"));
+
+function SectionFallback() {
+  return <div className="animate-fade-in" style={{ minHeight: "200px" }} />;
+}
 
 export default function App() {
   return (
     <ThemeProvider>
       <Navbar />
-      <main className="relative isolate overflow-hidden">
+      <main id="main" className="relative isolate overflow-hidden">
         <Hero />
-        <About />
-        <TechStack />
-        <Projects />
-        <Journey />
-        <CurrentlyLearning />
-        <Contact />
+        <Suspense fallback={<SectionFallback />}>
+          <About />
+          <TechStack />
+          <Projects />
+          <Journey />
+          <CurrentlyLearning />
+          <Contact />
+        </Suspense>
       </main>
       <Footer />
     </ThemeProvider>

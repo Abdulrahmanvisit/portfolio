@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#13161f" />
+  <rect x="40" y="30" width="720" height="60" rx="8" fill="#0b0c14" stroke="#2d3142" stroke-width="1" />
+  <circle cx="70" cy="60" r="14" fill="#2563eb" opacity=".2" />
+  <rect x="95" y="45" width="180" height="18" rx="4" fill="#94a3b8" opacity=".15" />
+  <rect x="95" y="68" width="140" height="12" rx="4" fill="#94a3b8" opacity=".1" />
+  <rect x="560" y="35" width="180" height="32" rx="6" fill="#2563eb" opacity=".15" />
+  <text x="650" y="56" font-family="system-ui, sans-serif" font-size="14" fill="#2563eb" text-anchor="middle" font-weight="600">TypeScript · React</text>
+  <rect x="40" y="110" width="720" height="280" rx="8" fill="#0b0c14" stroke="#2d3142" stroke-width="1" />
+  <rect x="55" y="125" width="700" height="250" rx="4" fill="#1a1d2e" />
+  <text x="400" y="220" font-family="system-ui, sans-serif" font-size="18" fill="#94a3b8" text-anchor="middle">Nigeria Police Academy</text>
+  <text x="400" y="250" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8" opacity=".7" text-anchor="middle">Admissions · Programs · Campus Life</text>
+  <text x="400" y="415" font-family="system-ui, sans-serif" font-size="14" fill="#94a3b8" opacity=".5" text-anchor="middle">Polac Website — TypeScript + React</text>
+</svg>

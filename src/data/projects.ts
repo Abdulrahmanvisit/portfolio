@@ -17,7 +17,7 @@ export const projects: Project[] = [
     tags: ["React", "Vite", "Tailwind CSS"],
     github: "https://github.com/Abdulrahmanvisit/SME-Expense-Tracker-project",
     demo: "https://sme-expense-tracker-project.vercel.app",
-    image: "",
+    image: "/images/projects/sme-expense-tracker.png",
   },
   {
     id: "movie-search-pro",
@@ -27,7 +27,7 @@ export const projects: Project[] = [
     tags: ["React", "Vite", "React Router", "Tailwind CSS", "API"],
     github: "https://github.com/Abdulrahmanvisit/movie-search-pro",
     demo: "https://movie-search-pro-ivory.vercel.app",
-    image: "",
+    image: "/images/projects/movie-search-pro.png",
   },
   {
     id: "react-currency-converter",
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     tags: ["React", "Vite", "Tailwind CSS", "API"],
     github: "https://github.com/Abdulrahmanvisit/react-vite-currency-converter",
     demo: null,
-    image: "",
+    image: "/images/projects/react-currency-converter.png",
   },
   {
     id: "polac-website",
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     tags: ["TypeScript", "React", "Responsive Design"],
     github: "https://github.com/Abdulrahmanvisit/polacWebsite",
     demo: null,
-    image: "",
+    image: "/images/projects/polac-website.png",
   },
   {
     id: "sociobook",
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     tags: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Abdulrahmanvisit/Sociobook",
     demo: null,
-    image: "",
+    image: "/images/projects/sociobook.png",
   },
   {
     id: "bookmark-saver",
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     tags: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Abdulrahmanvisit/Bookmark-saver",
     demo: null,
-    image: "",
+    image: "/images/projects/bookmark-saver.png",
   },
   {
     id: "expense-tracker",
@@ -77,7 +77,7 @@ export const projects: Project[] = [
     tags: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Abdulrahmanvisit/expense-tracker",
     demo: null,
-    image: "",
+    image: "/images/projects/expense-tracker.png",
   },
   {
     id: "color-palette",
@@ -87,7 +87,7 @@ export const projects: Project[] = [
     tags: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Abdulrahmanvisit/Color-Pallete-generator",
     demo: null,
-    image: "",
+    image: "/images/projects/color-palette.png",
   },
 ];
 

@@ -43,8 +43,10 @@ export default function Navbar() {
         <div className="flex items-center gap-4 md:gap-6">
           <ThemeToggle />
           <button
+            id="mobile-menu-button"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
+            aria-controls="mobile-navigation"
             onClick={() => setOpen(!open)}
             className="md:hidden rounded-md p-2 text-[var(--color-text)] hover:bg-[var(--color-border)]/60 transition-colors active:scale-95"
           >
@@ -54,6 +56,7 @@ export default function Navbar() {
       </div>
 
       <nav
+        id="mobile-navigation"
         aria-label="Mobile navigation"
         className={cn(
           "md:hidden overflow-hidden transition-all duration-300 ease-out",
