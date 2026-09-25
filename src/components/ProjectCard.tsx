@@ -1,22 +1,12 @@
 import { ArrowRight } from "lucide-react";
-import { useState } from "react";
 import type { Project } from "../data/projects";
-import { projectPlaceholder } from "../data/projects";
+import ProjectImage from "./ProjectImage";
 
 export default function ProjectCard({ project }: { project: Project }) {
-  const [imgError, setImgError] = useState(false);
-
-  const image = imgError || !project.image ? projectPlaceholder : project.image;
-
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-[var(--radius)] border border-[var(--color-border)] bg-[var(--color-bg-raised)] transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.01] hover:shadow-xl hover:shadow-black/20 animate-fade-in-up">
       <div className="relative aspect-[16/9] w-full overflow-hidden">
-        <img
-          src={image}
-          alt=""
-          loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+        <ProjectImage project={project} />
       </div>
       <div className="p-6">
         <h3 className="font-heading text-xl font-semibold text-[var(--color-text)] group-hover:text-[var(--color-accent)] transition-colors">
