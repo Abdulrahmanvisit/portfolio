@@ -1,7 +1,37 @@
+import { useState } from "react";
 import { Send } from "lucide-react";
 import { socialLinks } from "../data/social";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("submitting");
+
+    const { name, email, message } = formData;
+    const subject = encodeURIComponent("Portfolio contact from " + name);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    );
+    const mailtoLink = `mailto:abdurrahmanbello99@gmail.com?subject=${subject}&body=${body}`;
+
+    // Open mailto link
+    window.location.href = mailtoLink;
+
+    // Show success after a brief delay
+    setTimeout(() => {
+      setStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+      setTimeout(() => setStatus("idle"), 5000);
+    }, 500);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
   return (
     <section id="contact" className="border-t border-[var(--color-border)] py-16 md:py-24">
       <div className="wrap">
@@ -15,14 +45,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <form
-          action="mailto:abdurrahmanbello99@gmail.com?subject=Portfolio%20contact"
-          method="POST"
-          encType="text/plain"
-          target="_blank"
-          rel="noopener"
-          className="mx-auto mt-10 grid max-w-2xl gap-4"
-        >
+        <form onSubmit={handleSubmit} className="mx-auto mt-10 grid max-w-2xl gap-4">
           <div className="animate-fade-in-up">
             <label htmlFor="name" className="sr-only">
               Your name
@@ -33,6 +56,10 @@ export default function Contact() {
               name="name"
               required
               placeholder="Your name"
+              autoComplete="name"
+              value={formData.name}
+              onChange={handleChange}
+              disabled={status === "submitting"}
               className="input animate-fade-in-up"
             />
           </div>
@@ -46,6 +73,10 @@ export default function Contact() {
               name="email"
               required
               placeholder="you@example.com"
+              autoComplete="email"
+              value={formData.email}
+              onChange={handleChange}
+              disabled={status === "submitting"}
               className="input animate-fade-in-up"
             />
           </div>
@@ -59,21 +90,38 @@ export default function Contact() {
               required
               rows={4}
               placeholder="What can I help with?"
+              autoComplete="off"
+              value={formData.message}
+              onChange={handleChange}
+              disabled={status === "submitting"}
               className="input resize-y animate-fade-in-up"
             />
           </div>
           <button
             type="submit"
+            disabled={status === "submitting"}
             className="btn btn--primary self-start group animate-fade-in-up"
-            style={{ animationDelay: "180ms" }}
+            style={{ animationDelay: "180ms", opacity: status === "submitting" ? 0.7 : 1 }}
           >
-            Send message <Send size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+            {status === "submitting" ? (
+              <>
+                <svg className="animate-spin -ml-1 mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                </svg>
+                Sending…
+              </>
+            ) : (
+              <>Send message <Send size={16} className="ml-2 group-hover:translate-x-1 transition-transform" /></>
+            )}
           </button>
         </form>
 
-        <p className="sr-only" id="mailto-fallback">
-          If your email client does not open, please email me directly at abdurrahmanbello99@gmail.com
-        </p>
+        {status === "success" && (
+          <p className="sr-only" id="mailto-success">
+            Email client opened. If it didn't open, please email me directly at abdurrahmanbello99@gmail.com
+          </p>
+        )}
 
         <div className="mt-12 flex justify-center gap-6 animate-fade-in-up" style={{ animationDelay: "240ms" }}>
           {socialLinks.map((link) => (
