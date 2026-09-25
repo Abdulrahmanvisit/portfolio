@@ -1,5 +1,5 @@
 import type { ComponentType } from "react";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 export type NavIcon = ComponentType<{ className?: string }>;
 
@@ -19,6 +19,11 @@ export const socialLinks: SocialLink[] = [
     label: "LinkedIn",
     href: "https://linkedin.com/in/abdurrahmanbello",
     icon: Linkedin,
+  },
+  {
+    label: "X",
+    href: "https://x.com/abdulcodes001",
+    icon: Twitter,
   },
   {
     label: "Email",
