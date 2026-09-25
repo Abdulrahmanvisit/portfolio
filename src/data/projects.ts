@@ -56,7 +56,7 @@ export const projects: Project[] = [
       "A front-end clone replicating Facebook's interface — layout, feed, and interaction patterns rebuilt from scratch with HTML, CSS, and JavaScript.",
     tags: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Abdulrahmanvisit/Sociobook",
-    demo: null,
+    demo: "https://sociobook-black.vercel.app/",
     image: "/images/projects/sociobook.png",
   },
   {
