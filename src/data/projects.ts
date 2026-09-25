@@ -40,16 +40,6 @@ export const projects: Project[] = [
     image: "/images/projects/react-currency-converter.png",
   },
   {
-    id: "polac-website",
-    title: "Nigeria Police Academy Website",
-    description:
-      "A modern, responsive website for the Nigeria Police Academy providing comprehensive information about admissions, academic programs, campus life, and institutional updates. Built with TypeScript for enhanced accessibility and digital presence.",
-    tags: ["TypeScript", "React", "Responsive Design"],
-    github: "https://github.com/Abdulrahmanvisit/polacWebsite",
-    demo: null,
-    image: "/images/projects/polac-website.png",
-  },
-  {
     id: "sociobook",
     title: "Sociobook",
     description:
