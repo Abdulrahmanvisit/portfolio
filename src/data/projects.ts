@@ -66,7 +66,7 @@ export const projects: Project[] = [
       "A responsive, lightweight web app to save, organize, and manage favorite links. Access bookmarks anytime, quickly and easily. Built with HTML, CSS, and JavaScript.",
     tags: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Abdulrahmanvisit/Bookmark-saver",
-    demo: null,
+    demo: "https://bookmark-saver-virid.vercel.app/",
     image: "/images/projects/bookmark-saver.png",
   },
   {
