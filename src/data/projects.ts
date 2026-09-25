@@ -8,9 +8,6 @@ export interface Project {
   image: string;
 }
 
-const og = (repo: string) =>
-  `https://opengraph.githubassets.com/1/${repo}.png`;
-
 export const projects: Project[] = [
   {
     id: "sociobook",
@@ -20,7 +17,7 @@ export const projects: Project[] = [
     tags: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Abdulrahmanvisit/Sociobook",
     demo: null,
-    image: "",
+    image: "/images/projects/sociobook.svg",
   },
   {
     id: "expense-tracker",
@@ -30,7 +27,7 @@ export const projects: Project[] = [
     tags: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Abdulrahmanvisit/expense-tracker",
     demo: null,
-    image: "",
+    image: "/images/projects/expense-tracker.svg",
   },
   {
     id: "bookmark-saver",
@@ -40,7 +37,7 @@ export const projects: Project[] = [
     tags: ["JavaScript"],
     github: "https://github.com/Abdulrahmanvisit/Bookmark-saver",
     demo: null,
-    image: "",
+    image: "/images/projects/bookmark-saver.svg",
   },
   {
     id: "currency-converter",
@@ -50,7 +47,7 @@ export const projects: Project[] = [
     tags: ["JavaScript"],
     github: "https://github.com/Abdulrahmanvisit/currency-converter",
     demo: null,
-    image: "",
+    image: "/images/projects/currency-converter.svg",
   },
   {
     id: "color-palette",
@@ -60,7 +57,7 @@ export const projects: Project[] = [
     tags: ["CSS", "JavaScript"],
     github: "https://github.com/Abdulrahmanvisit/Color-Pallete-generator",
     demo: null,
-    image: "",
+    image: "/images/projects/color-palette.svg",
   },
   {
     id: "contact-form",
@@ -70,7 +67,7 @@ export const projects: Project[] = [
     tags: ["CSS", "JavaScript"],
     github: "https://github.com/Abdulrahmanvisit/contact-form",
     demo: null,
-    image: "",
+    image: "/images/projects/contact-form.svg",
   },
 ];
 

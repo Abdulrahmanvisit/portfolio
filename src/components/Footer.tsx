@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { socialLinks } from "../data/social";
 
 export default function Footer() {
@@ -14,9 +13,9 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={s.label}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:scale-105 active:scale-95"
             >
-                  <s.icon className="h-4 w-4" />
+              <s.icon className="h-4 w-4" />
             </a>
           ))}
         </div>

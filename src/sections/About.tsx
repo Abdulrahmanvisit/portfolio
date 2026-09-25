@@ -1,6 +1,4 @@
-import { motion } from "framer-motion";
 import { about } from "../data/about";
-import { fadeInUp, staggerSm } from "../lib/animations";
 import Section from "../components/Section";
 
 export default function About() {
@@ -11,16 +9,16 @@ export default function About() {
       title="Frontend-focused, backend-curious"
       className="grid gap-10 md:grid-cols-2 md:items-start"
     >
-      <motion.p variants={fadeInUp} className="text-[var(--color-muted)] max-w-prose">
+      <p className="text-[var(--color-muted)] max-w-prose animate-fade-in-up">
         {about.intro}
-      </motion.p>
+      </p>
 
-      <motion.ul variants={staggerSm} className="grid gap-4">
-        {about.list.map((item) => (
-          <motion.li
+      <ul className="grid gap-4">
+        {about.list.map((item, index) => (
+          <li
             key={item.title}
-            variants={fadeInUp}
-            className="flex items-start gap-3"
+            className="flex items-start gap-3 animate-fade-in-up"
+            style={{ animationDelay: `${index * 80}ms` }}
           >
             <span className="mt-0.5 text-[var(--color-accent)]">
               <item.icon className="h-4 w-4" />
@@ -31,9 +29,9 @@ export default function About() {
                 {item.description}
               </span>
             </span>
-          </motion.li>
+          </li>
         ))}
-      </motion.ul>
+      </ul>
     </Section>
   );
 }

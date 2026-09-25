@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-import { fadeInUp } from "../lib/animations";
 import { learning } from "../data/learning";
 import Section from "../components/Section";
 
@@ -11,8 +9,12 @@ export default function CurrentlyLearning() {
       title="What I'm building next"
       className="grid gap-5 sm:grid-cols-2 md:grid-cols-3"
     >
-      {learning.map((item) => (
-        <motion.div key={item.title} variants={fadeInUp} className="card p-6">
+      {learning.map((item, index) => (
+        <div
+          key={item.title}
+          className="card p-6 animate-fade-in-up"
+          style={{ animationDelay: `${index * 80}ms` }}
+        >
           <div className="flex items-start gap-3">
             <span className="mt-0.5 text-[var(--color-accent)]">
               {item.icon ? <item.icon className="h-4 w-4" /> : null}
@@ -22,7 +24,7 @@ export default function CurrentlyLearning() {
               <p className="mt-1 text-sm text-[var(--color-text-muted)]">{item.description}</p>
             </div>
           </div>
-        </motion.div>
+        </div>
       ))}
     </Section>
   );

@@ -1,4 +1,3 @@
-import { motion, useReducedMotion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "../lib/utils";
@@ -9,14 +8,9 @@ import ThemeToggle from "./ThemeToggle";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const active = useActiveSection(navLinks.map((n) => n.id));
-  const reduced = useReducedMotion();
 
   return (
-    <motion.header
-      initial={{ y: -24, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      className="sticky top-0 z-40 border-b border-[var(--color-border)] bg-[var(--color-bg)]/70 backdrop-blur"
-    >
+    <header className="sticky top-0 z-40 border-b border-[var(--color-border)] bg-[var(--color-bg)]/70 backdrop-blur animate-fade-in-down">
       <div className="wrap flex h-16 items-center justify-between">
         <a href="#home" className="font-heading text-lg font-bold tracking-tight">
           Abdurrahman<span className="text-[var(--color-accent)]">.</span>
@@ -48,23 +42,23 @@ export default function Navbar() {
 
         <div className="flex items-center gap-4 md:gap-6">
           <ThemeToggle />
-          <motion.button
-            whileTap={reduced ? undefined : { scale: 0.9 }}
+          <button
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen(!open)}
-            className="md:hidden rounded-md p-2 text-[var(--color-text)] hover:bg-[var(--color-border)]/60"
+            className="md:hidden rounded-md p-2 text-[var(--color-text)] hover:bg-[var(--color-border)]/60 transition-colors active:scale-95"
           >
             {open ? <X size={20} /> : <Menu size={20} />}
-          </motion.button>
+          </button>
         </div>
       </div>
 
-      <motion.nav
+      <nav
         aria-label="Mobile navigation"
-        initial={{ maxHeight: 0, opacity: 0 }}
-        animate={{ maxHeight: open ? 320 : 0, opacity: open ? 1 : 0 }}
-        className="md:hidden overflow-hidden"
+        className={cn(
+          "md:hidden overflow-hidden transition-all duration-300 ease-out",
+          open ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+        )}
       >
         <ul className="flex flex-col gap-2 py-3">
           {navLinks.map((n) => (
@@ -73,7 +67,7 @@ export default function Navbar() {
                 href={n.href}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "block px-4 py-2 text-base font-medium text-[var(--color-muted)] hover:text-[var(--color-accent)]",
+                  "block px-4 py-2 text-base font-medium text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors",
                   active === n.id && "text-[var(--color-accent)]"
                 )}
               >
@@ -82,7 +76,7 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-      </motion.nav>
-    </motion.header>
+      </nav>
+    </header>
   );
 }
