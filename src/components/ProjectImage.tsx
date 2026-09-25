@@ -11,12 +11,18 @@ export default function ProjectImage({ project }: { project: Project }) {
       {hasImage ? (
         <img
           src={project.image}
-          alt=""
+          alt={`${project.title} project preview`}
           loading="lazy"
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).style.display = "none";
+          }}
         />
       ) : (
         <Github className="h-16 w-16 text-[var(--color-text-muted)]/30" aria-hidden="true" />
+      )}
+      {hasImage && (
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
       )}
     </div>
   );
