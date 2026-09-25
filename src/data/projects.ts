@@ -76,7 +76,7 @@ export const projects: Project[] = [
       "A simple, responsive web app to record and manage daily income and expenses. Updates balance instantly and saves data locally for easy financial tracking. Built with HTML, CSS, and JavaScript.",
     tags: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Abdulrahmanvisit/expense-tracker",
-    demo: null,
+    demo: "https://expense-tracker-nine-lilac-51.vercel.app/",
     image: "/images/projects/expense-tracker.png",
   },
   {
@@ -86,7 +86,7 @@ export const projects: Project[] = [
       "Generates and displays random color palettes for design inspiration — simple, responsive, and built for fast iteration with HTML, CSS, and JavaScript.",
     tags: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/Abdulrahmanvisit/Color-Pallete-generator",
-    demo: null,
+    demo: "https://color-pallete-generator-sigma.vercel.app/",
     image: "/images/projects/color-palette.png",
   },
 ];
