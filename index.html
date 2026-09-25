@@ -10,15 +10,14 @@
     />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <script>
-      try {
-        var stored = localStorage.getItem("theme");
-        var system = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        if (stored === "light" || stored === "dark") {
-          document.documentElement.classList.toggle("dark", stored === "dark");
-        } else if (system === "dark") {
-          document.documentElement.classList.add("dark");
-        }
-      } catch (e) {}
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var initialTheme = stored === "light" || stored === "dark" ? stored : (prefersDark ? "dark" : "light");
+          document.documentElement.classList.toggle("dark", initialTheme === "dark");
+        } catch (e) {}
+      })();
     </script>
   </head>
   <body class="font-body antialiased bg-[var(--color-bg)] text-[var(--color-text)]">
