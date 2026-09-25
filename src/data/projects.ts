@@ -36,7 +36,7 @@ export const projects: Project[] = [
       "A responsive, dynamic currency converter built with React, Vite, and Tailwind CSS. Demonstrates custom hooks, state management with useState, and real-time API integration for exchange rates.",
     tags: ["React", "Vite", "Tailwind CSS", "API"],
     github: "https://github.com/Abdulrahmanvisit/react-vite-currency-converter",
-    demo: null,
+    demo: "https://react-vite-currency-converter-1w7y.vercel.app/",
     image: "/images/projects/react-currency-converter.png",
   },
   {
