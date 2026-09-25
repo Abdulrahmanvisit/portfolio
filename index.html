@@ -19,9 +19,36 @@
         } catch (e) {}
       })();
     </script>
+    <style>
+      #root { visibility: hidden; }
+      #root.loaded { visibility: visible; }
+      .theme-loader {
+        position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+        background: var(--color-bg); color: var(--color-text); z-index: 9999;
+        font-family: Inter, system-ui, sans-serif; font-size: 14px;
+      }
+      .theme-loader::after { content: ""; width: 20px; height: 20px; border: 2px solid var(--color-border); border-top-color: var(--color-accent); border-radius: 50%; animation: spin 0.8s linear infinite; margin-left: 8px; }
+      @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
   </head>
   <body class="font-body antialiased bg-[var(--color-bg)] text-[var(--color-text)]">
     <div id="root"></div>
+    <div class="theme-loader" id="theme-loader" aria-hidden="true">Loading…</div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var root = document.getElementById("root");
+        var loader = document.getElementById("theme-loader");
+        var observer = new MutationObserver(function() {
+          if (root.hasChildNodes()) {
+            root.classList.add("loaded");
+            if (loader) loader.remove();
+            observer.disconnect();
+          }
+        });
+        observer.observe(root, { childList: true });
+        setTimeout(function() { root.classList.add("loaded"); if (loader) loader.remove(); }, 2000);
+      });
+    </script>
   </body>
 </html>
