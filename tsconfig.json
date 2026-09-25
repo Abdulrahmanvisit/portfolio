@@ -8,11 +8,7 @@
     "lib": ["DOM", "ES2020"],
     "types": ["vite/client"],
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "skipLibCheck": true
   },
   "include": ["src", "vite.config.ts"],
   "exclude": ["node_modules", "dist"]
