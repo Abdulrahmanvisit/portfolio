@@ -18,10 +18,6 @@ export default function Journey() {
             variants={fadeInUp}
             className="relative mb-10 last:mb-0"
           >
-            <span
-              className="absolute -left-[9px] top-1 flex h-4 w-4 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-raised)]"
-              aria-hidden="true"
-            />
             <div className="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
               <h3 className="font-medium text-[var(--color-text)]">{item.title}</h3>
               <time className="text-sm text-[var(--color-muted)]">{item.date}</time>
