@@ -23,8 +23,8 @@ export const about = {
       icon: Globe,
     },
     {
-      title: "AI-assisted Development",
-      description: "Prompting, tooling, and productivity workflows that accelerate delivery.",
+      title: "Developer Experience & Tooling",
+      description: "Modern workflows, developer tools, and productivity practices that ship quality code faster.",
       icon: Sparkles,
     },
     {

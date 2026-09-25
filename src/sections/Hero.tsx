@@ -21,8 +21,8 @@ export default function Hero() {
 
             <p className="mt-5 max-w-xl text-lg text-[var(--color-muted)]">
               Frontend developer building thoughtful, scalable, and modern web experiences.
-              Final-year Computer Science student interested in frontend engineering, full-stack
-              development, and AI-assisted software development.
+              Final-year Computer Science student passionate about clean architecture,
+              performant UIs, and crafting products that solve real problems.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4 animate-fade-in-up" style={{ animationDelay: "100ms" }}>
