@@ -11,7 +11,7 @@ export default function Journey() {
       title="Experience & journey"
       className="relative"
     >
-      <div className="relative border-l border-[var(--color-border)] pl-7">
+      <div className="relative border-l border-[var(--color-border)] pl-10">
         {journey.map((item) => (
           <motion.div
             key={item.id}
