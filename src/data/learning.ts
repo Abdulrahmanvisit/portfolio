@@ -12,7 +12,7 @@ export interface LearningItem {
 export const learning: LearningItem[] = [
   {
     title: "Backend development",
-    description: "Building REST APIs and server-side logic with Node.js and a database.",
+    description: "Learning to build REST APIs and server-side logic with Node.js and databases.",
     icon: Server,
   },
   {
@@ -22,7 +22,7 @@ export const learning: LearningItem[] = [
   },
   {
     title: "Full-stack engineering",
-    description: "Connecting React experiences to persisted data and CI/CD deployments.",
+    description: "Learning to connect React frontends to backend APIs, databases, and deployment pipelines.",
     icon: Database,
   },
   {

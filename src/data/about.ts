@@ -18,8 +18,8 @@ export const about = {
       icon: Code,
     },
     {
-      title: "Full-stack Development",
-      description: "Building end-to-end experiences with REST APIs and server-side logic.",
+      title: "Full-stack Development (Learning)",
+      description: "Building REST APIs and server-side logic with Node.js. Actively learning backend fundamentals, databases, and system design.",
       icon: Globe,
     },
     {
